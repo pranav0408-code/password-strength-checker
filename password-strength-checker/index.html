@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Strength Checker & Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+</head>
+<body>
+  <main class="card">
+    <h1>Password Strength Checker</h1>
+
+    <label for="password">Enter a password</label>
+    <div class="row">
+      <input type="password" id="password" placeholder="Type a password..." autocomplete="off">
+      <button id="toggle" type="button">Show</button>
+    </div>
+
+    <div class="meter"><div id="bar"></div></div>
+    <p id="score-label" class="muted">Start typing to check strength.</p>
+    <p id="crack-time"></p>
+    <ul id="suggestions"></ul>
+
+    <hr>
+
+    <h2>Password Generator</h2>
+    <label for="length">Length: <span id="length-value">16</span></label>
+    <input type="range" id="length" min="8" max="64" value="16">
+
+    <div class="checks">
+      <label><input type="checkbox" id="upper" checked> Uppercase</label>
+      <label><input type="checkbox" id="lower" checked> Lowercase</label>
+      <label><input type="checkbox" id="digits" checked> Digits</label>
+      <label><input type="checkbox" id="symbols" checked> Symbols</label>
+    </div>
+
+    <div class="row">
+      <input type="text" id="generated" readonly placeholder="Click generate">
+      <button id="copy" type="button">Copy</button>
+    </div>
+    <button id="generate" type="button" class="primary">Generate password</button>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
